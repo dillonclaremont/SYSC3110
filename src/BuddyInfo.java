@@ -9,7 +9,7 @@ public class BuddyInfo {
 	}
 	public static void main(String[] args) {
 		BuddyInfo buddy = new BuddyInfo("Homer");
-		System.out.println("Hello, ive found" + buddy.getName());
+		System.out.println("Hello, I am now returning: " + buddy.getName());
 
 	}
 
