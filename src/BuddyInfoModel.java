@@ -1,14 +1,15 @@
 
-public class BuddyInfo {
+public class BuddyInfoModel {
 	private String name;
 	private String address;
 	private String phoneNumber;
 	
-	public BuddyInfo(String name){
+	public BuddyInfoModel(String name){
 		setName(name);
 	}
+	
 	public static void main(String[] args) {
-		BuddyInfo buddy = new BuddyInfo("Homer");
+		BuddyInfoModel buddy = new BuddyInfoModel("Homer");
 		System.out.println("Hello, I am experimentaly returning: Simpson @ " + buddy.getName());
 
 	}
@@ -37,5 +38,8 @@ public class BuddyInfo {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public String toString() {
+		return "name: " + name + " \n" + "phone number: " + phoneNumber + " \n" + "address: " + address + " \n"; 
+	}
 
 }
