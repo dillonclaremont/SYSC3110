@@ -1,19 +1,38 @@
+import java.util.Scanner;
 
 public class BuddyInfoModel {
 	private String name;
 	private String address;
 	private String phoneNumber;
+	private int age;
 	
 	public BuddyInfoModel(String name){
 		setName(name);
 	}
 	
-	public static void main(String[] args) {
-		BuddyInfoModel buddy = new BuddyInfoModel("Homer");
-		System.out.println("Hello, I am experimentaly returning: Simpson @ " + buddy.getName());
-
+	public BuddyInfoModel(BuddyInfoModel buddy) {
+		setName(buddy.getName());
+		setAddress(buddy.getAddress());
+		setPhoneNumber(buddy.getPhoneNumber());
+		setAge(buddy.getAge());
 	}
-
+	
+	public static BuddyInfoModel importBuddy(String buddy){
+		Scanner s = new Scanner(buddy).useDelimiter("\\$");
+		BuddyInfoModel b = new BuddyInfoModel(s.next());
+		b.setPhoneNumber(s.next());
+		b.setAddress(s.next());
+		return b;
+	}
+	
+	public String getGreeting() {
+		return ("Hi my name is " + name + ".");
+	}
+	
+	public boolean isOver18() {
+		return (age > 18);
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -22,6 +41,14 @@ public class BuddyInfoModel {
 		this.name = name;
 	}
 
+	public int getAge() {
+		return age;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
 	public String getAddress() {
 		return address;
 	}
@@ -39,7 +66,9 @@ public class BuddyInfoModel {
 	}
 
 	public String toString() {
-		return "name: " + name + " \n" + "phone number: " + phoneNumber + " \n" + "address: " + address + " \n"; 
+		return name + "$" + phoneNumber + "$" + address; 
 	}
+	
+
 
 }

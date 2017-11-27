@@ -1,12 +1,9 @@
 
-public class Main {
+public class AddressBookMain {
 	public static void main (String[] args) {
-		AddressBookView addressBookView = new AddressBookView();
 		AddressBookController addressBookController = new AddressBookController();
-		
-		addressBookView.setAddressBookController(addressBookController);
+		AddressBookView addressBookView = new AddressBookView(addressBookController);
+
 		addressBookController.setAddressBookView(addressBookView);
 	}
-	
-	
 }
