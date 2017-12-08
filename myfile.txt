@@ -1,2 +1,2 @@
-homer$1234567$123 springfield
-Bart$555-1234$ShelbyVille
+Homer$613-123-4567$Springfield
+Bart$819-123-4567$Springfield

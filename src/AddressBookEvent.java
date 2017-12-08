@@ -1,6 +1,7 @@
-import java.util.Date;
+
 import java.util.EventObject;
 
+@SuppressWarnings("serial")
 public class AddressBookEvent extends EventObject {
 	private BuddyInfoModel buddy;
 	

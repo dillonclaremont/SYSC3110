@@ -1,6 +1,5 @@
 import java.io.IOException;
 
-import javax.swing.DefaultListModel;
 
 public class AddressBookController {
 	AddressBookModel addressBookModel;
@@ -38,7 +37,7 @@ public class AddressBookController {
 		addressBookModel.updateBuddy(buddy, address, phoneNumber);
 	}
 	
-	public void export() {
+	public void export() throws IOException {
 		addressBookModel.export();
 	}
 	

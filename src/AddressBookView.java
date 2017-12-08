@@ -12,6 +12,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
+@SuppressWarnings("serial")
 public class AddressBookView extends JFrame implements ActionListener, AddressBookListener{
 		AddressBookController addressBookController;
 		private List <JMenuItem> menuItems = new ArrayList<JMenuItem>();
@@ -66,7 +67,11 @@ public class AddressBookView extends JFrame implements ActionListener, AddressBo
 		
 		JMenuItem save = new JMenuItem("Save");
 		save.addActionListener(e -> {
-			addressBookController.export();
+			try {
+				addressBookController.export();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		});
 		save.setEnabled(false);
 		menuItems.add(save);

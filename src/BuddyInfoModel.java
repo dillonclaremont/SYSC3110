@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class BuddyInfoModel {
+public class BuddyInfoModel implements Serializable {
 	private String name;
 	private String address;
 	private String phoneNumber;
@@ -22,6 +23,7 @@ public class BuddyInfoModel {
 		BuddyInfoModel b = new BuddyInfoModel(s.next());
 		b.setPhoneNumber(s.next());
 		b.setAddress(s.next());
+		s.close();
 		return b;
 	}
 	
@@ -69,6 +71,21 @@ public class BuddyInfoModel {
 		return name + "$" + phoneNumber + "$" + address; 
 	}
 	
-
-
+/*METHODS ADDED FOR LAB 8
+/* Part 2*/	
+	/**
+	 * Export Buddy to XML Format.
+	 * @param inheritedWhiteSpace	- level of whitespace to add based on parent
+	 * @return
+	 */
+	public String toXML(String inheritedWhiteSpace) {
+		String xml;
+		xml = inheritedWhiteSpace + "<Buddy name=\"" + name + "\">";
+		//xml += "\n" + inheritedWhiteSpace + "\t<Name>" + name + "</Name>";
+		xml += "\n" + inheritedWhiteSpace + "\t<Address>" + address + "</Address>";
+		xml += "\n" + inheritedWhiteSpace + "\t<PhoneNumber>" + phoneNumber + "</PhoneNumber>";
+		xml += "\n" + inheritedWhiteSpace + "\t<Age>" + age + "</Age>";
+		xml += "\n" + inheritedWhiteSpace + "</Buddy>";
+		return xml;
+	}
 }
